@@ -1,7 +1,7 @@
 <?php
 
-$user = 'root';
-$pass = '';
+$user = 'bug_bdd';
+$pass = 'bug_bdd';
 $db = 'bug_bdd';
 		
 		
