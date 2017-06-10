@@ -1,5 +1,7 @@
 <?php
 // Check for empty fields
+
+/*
 if(empty($_POST['name'])  		||
    empty($_POST['email']) 		||
    empty($_POST['phone']) 		||
@@ -9,18 +11,35 @@ if(empty($_POST['name'])  		||
 	echo "No arguments Provided!";
 	return false;
    }
-	
+
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
 $phone = strip_tags(htmlspecialchars($_POST['phone']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
-	
+*/
+   $name = 'marisol';
+   $email_address = 'garciaitua@eisti.eu';
+   $phone = '123';
+   $message = 'hola';
+   
 // Create the email and send the message
-$to = 'yourname@yourdomain.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+$to = 'marisol.garcia.ituarte@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 $email_subject = "Website Contact Form:  $name";
 $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
-$headers = "From: noreply@yourdomain.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$headers = "From: marisol.garcia.ituarte@gmail.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "Reply-To: $email_address";	
-mail($to,$email_subject,$email_body,$headers);
-return true;			
+
+
+$status = mail($to,$email_subject,$email_body,$headers);
+/*
+if (mail($to,$email_subject,$email_body,$headers)) {
+	echo '<p>Your message has been sent!</p>';
+} else {
+	echo '<p>Something went wrong, go back and try again!</p>';
+}*/
+//mail($to,$email_subject,$email_body,$headers);
+mail("marisol.garcia.ituarte@gmail.com","Success","Great, Localhost Mail works");
+
+echo($status);
+//return true;			
 ?>

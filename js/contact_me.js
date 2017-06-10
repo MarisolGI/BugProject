@@ -1,5 +1,8 @@
+
 $(function() {
 
+	
+	
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
@@ -21,8 +24,9 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "http://localhost/BugProject/mail/contact_me.php",
                 type: "POST",
+             
                 data: {
                     name: name,
                     phone: phone,
@@ -38,6 +42,8 @@ $(function() {
                         .append("</button>");
                     $('#success > .alert-success')
                         .append("<strong>Your message has been sent. </strong>");
+                                                            	                    
+                   
                     $('#success > .alert-success')
                         .append('</div>');
 
