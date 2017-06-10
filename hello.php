@@ -1,7 +1,4 @@
-<?php 
-	require_once ('helpers/common.php');
-	$show = show_hello();
-?>
+
 <html>
 
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,8 +27,7 @@
 </head>
 <body>
 <?php echo '<p>Our first project test</p>'; ?>
-<?php echo $show?>
-
+<?php include("home_test.php"); ?>
 
 <table>
   <tr>

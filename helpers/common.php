@@ -11,8 +11,8 @@ function show_project(){
 	if($conn->connect_error){
 		die("Unable to connect".$conn->connect_error);
 	}
-	$table_name="REF_CITY";
-	$query_string="select id,description from $table_name";
+	$table_name="project";
+	$query_string="select id,name,description from $table_name";
 	$result = mysqli_query($conn,$query_string) or die(mysqli_error($conn));
 	if (!$result) {
 		$message  = 'Requête invalide : ' . mysqli_error($conn) . "\n";
@@ -23,6 +23,7 @@ function show_project(){
 	echo "<table>
     <tr>
     <th>ID</th>
+	<th>Name</th>
     <th>Description</th>
 
     </tr>";
@@ -30,6 +31,7 @@ function show_project(){
 		while($row=mysqli_fetch_array($result)){
 
 			echo "<tr><td>".$row["id"]."</td>";
+			echo "<td>".$row["name"]."</td>";
 			echo "<td>".$row["description"]."</td>";
 
 		}
